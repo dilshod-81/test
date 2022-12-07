@@ -1,0 +1,81 @@
+ {% extends "layouts/base.html" %}
+
+ {% block content %}
+     <h1>{{ sinf.name }} dars jadvali</h1>
+
+     <table class="table table-bordered table-striped table-hover">
+     <tbody>
+     <tr class="text-center">
+         <th>Dushanba</th>
+         <th>Payshanba</th>
+     </tr>
+     <tr>
+         <td>
+             {% for row in kunlar.0 %}
+             {{ forloop.counter }}. {{ row.soat }}  {{ row.fan_nomi }} <br/>
+              {% empty %}
+                 Ushbu kun dam olish
+         {% endfor %}
+         </td>
+         <td>
+             {% for row in kunlar.3 %}
+             {{ forloop.counter }}. {{ row.soat }}  {{ row.fan_nomi }} <br/>
+             {% empty %}
+                 Ushbu kun dam olish
+         {% endfor %}
+         </td>
+     </tr>
+
+     <tr class="text-center">
+         <th>Seshanba</th>
+         <th>Juma</th>
+     </tr>
+     <tr>
+         <td>
+             {% for row in kunlar.1 %}
+             {{ forloop.counter }}. {{ row.soat }}  {{ row.fan_nomi }} <br/>
+             {% empty %}
+                 Ushbu kun dam olish
+         {% endfor %}
+         </td>
+         <td>
+             {% for row in kunlar.4 %}
+             {{ forloop.counter }}. {{ row.soat }}  {{ row.fan_nomi }} <br/>
+             {% empty %}
+                 Ushbu kun dam olish
+         {% endfor %}
+         </td>
+     </tr>
+
+     <tr class="text-center">
+         <th>Choshanba</th>
+         <th>Shanba</th>
+     </tr>
+     <tr>
+         <td>
+             {% for row in kunlar.2 %}
+             {{ forloop.counter }}. {{ row.soat }}  {{ row.fan_nomi }} <br/>
+             {% empty %}
+                 Ushbu kun dam olish
+         {% endfor %}
+         </td>
+         <td>
+             {% for row in kunlar.5 %}
+             {{ forloop.counter }}. {{ row.soat }}  {{ row.fan_nomi }} <br/>
+             {% empty %}
+                 Ushbu kun dam olish
+         {% endfor %}
+         </td>
+     </tr>
+
+     </tbody>
+
+     </table>
+
+     {% for dars in darslar %}
+
+         {{ dars.id }}/ {{ dars.fan_nomi }} / {{ dars.soat }} / {{ dars.get_hafta_kuni_display}}
+         <hr/>
+
+     {% endfor %}
+ {% endblock %}

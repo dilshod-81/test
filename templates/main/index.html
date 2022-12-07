@@ -1,0 +1,10 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+    <div class="list-group">
+    {% for sinf in sinflar %}
+        <a href="{% url 'dars-jadval' sinf.id %}" class="list-group-item">{{ sinf.name }}</a>
+    {% endfor %}
+    </div>
+{% endblock %}
